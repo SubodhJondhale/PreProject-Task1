@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom elements</title>
+    <style>
+      .header {
+        text-align: center;
+        padding: 10px;
+        background-color: rgb(128, 221, 142);
+      }
+      .list-item {
+        margin: 15px 0;
+        color: darkorange;
+      }
+      p {
+        background-color: rgb(230, 241, 204);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Dom elements in HTML</h1>
+    </header>
+    <main id="main">
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+        recusandae exercitationem ullam placeat libero, amet nulla mollitia,
+        doloribus quos debitis asperiores, ipsa vel deserunt saepe error.
+        Molestiae animi aliquam dignissimos?
+      </div>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi aut quos
+        facilis. In ut voluptatum maxime similique magnam deleniti sit vitae
+        cumque inventore quibusdam, accusamus sed asperiores eum deserunt
+      </p>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sequi
+        molestiae voluptatibus voluptas quam cum, expedita architecto accusamus
+      </div>
+    </main>
+    <h2>List of Nodes in Document</h2>
+    <ul id="listchild"></ul>
+    <script>
+      const doc = document.getElementById("main");
+      const list = doc.childNodes;
+
+      const ulChilds = document.getElementById("listchild");
+      for (let i = 0; i < list.length; i++) {
+        let li = document.createElement("li");
+        li.classList.add("list-item");
+        li.innerText = list[i].nodeName;
+        ulChilds.appendChild(li);
+      }
+    </script>
+  </body>
+</html>
